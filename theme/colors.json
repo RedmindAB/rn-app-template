@@ -1,0 +1,33 @@
+{
+  "primary": {
+    "color": "#FFF",
+    "onColor": "#FFF"
+  },
+  "primary_variant": {
+    "color": "#FFF",
+    "onColor": "#FFF"
+  },
+  "secondary": {
+    "color": "#FFF",
+    "onColor": "#FFF"
+  },
+  "secondary_variant": {
+    "color": "#FFF",
+    "onColor": "#FFF"
+  },
+  "tertiary": {
+    "color": "#FFF",
+    "onColor": "#FFF"
+  },
+  "tertiary_variant": {
+    "color": "#FFF",
+    "onColor": "#FFF"
+  },
+  "background": {
+    "color": "#FFF",
+    "onColor": "#FFF",
+    "lightOnColor": "#FFF"
+  },
+  "error": "#FFF",
+  "success": "#FFF"
+}
