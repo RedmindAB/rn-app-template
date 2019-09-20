@@ -5,7 +5,6 @@ import {
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation'
-
 import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen'
 import { screens, stacks } from './navigationConstants'
 

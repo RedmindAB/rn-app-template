@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react", "react-native", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "import/no-unresolved": 0,
+    "semi": 0,
+    "no-use-before-define": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "arrow-parens": 0,
+    "no-shadow": 0,
+    "implicit-arrow-linebreak": 0,
+    "comma-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "react-native/no-inline-styles": 0,
+    "react/jsx-curly-newline": 0,
+    "react/prefer-stateless-function": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "jsx-quotes": ["error", "prefer-double"],
+    "@typescript-eslint/member-delimiter-style": 0,
+    "class-methods-use-this": 0,
+    "import/prefer-default-export": 0,
+    "camelcase": 1,
+    "arrow-spacing": 1,
+    "spaced-comment": 1,
+    "no-console": 0,
+    "react/jsx-no-bind": [
+      1,
+      {
+        "allowArrowFunctions": false
+      }
+    ]
+  }
+}

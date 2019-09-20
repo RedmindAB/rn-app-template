@@ -1,10 +1,8 @@
 import 'moment/locale/sv'
-
 import { NativeModules, Platform } from 'react-native'
 import i18n from 'i18n-js'
 import transformKeys from 'object-key-path-transformer'
 import moment from 'moment'
-
 import sv from './languages/sv.json'
 import en from './languages/en.json'
 import missingTranslationDetection from './languages/missingTranslationDetection.json'
@@ -31,9 +29,9 @@ i18n.translations = { en, sv }
 moment.locale(deviceLocale.toLowerCase() === 'sv' ? 'sv' : 'en')
 
 // used for looking for missing translations
-__DEV__ && (i18n.translations.xxx = missingTranslationDetection)
+__DEV__ && (i18n.translations.missingTranslationDetection = missingTranslationDetection)
 
 // used for checking breaking texts
-__DEV__ && (i18n.translations.long = breakingLongTextDetection)
+__DEV__ && (i18n.translations.breakingLongTextDetection = breakingLongTextDetection)
 
 export default i18n

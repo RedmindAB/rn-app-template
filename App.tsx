@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import { connect } from 'react-redux'
-
+import { Dispatch } from 'redux'
+import { NavigationState } from 'react-navigation'
 import navigationService from './util/navigationService'
 import RootNavigation from './navigation'
-import config from './constants/config'
-import { MainState } from './redux/reducers'
-import { Dispatch } from 'redux'
 import actions from './redux/actions'
+import config from './constants/config'
 
 type OwnProps = {}
-type StateProps = ReturnType<typeof mapStateToProps>
 type mapDispatchToProps = ReturnType<typeof mapDispatchToProps>
-type Props = OwnProps & StateProps & mapDispatchToProps
+type Props = OwnProps & mapDispatchToProps
 
 class App extends Component<Props> {
   getActiveRouteName = navigationState => {
@@ -28,14 +26,21 @@ class App extends Component<Props> {
     return route.routeName
   }
 
-  handleNavigationStateChange = (prevState, currentState) => {
+  handleNavigationStateChange = (
+    prevState: NavigationState,
+    currentState: NavigationState
+  ) => {
+    const { setCurrentScreen } = this.props
     const currentScreen = this.getActiveRouteName(currentState)
     const prevScreen = this.getActiveRouteName(prevState)
 
     if (prevScreen !== currentScreen) {
-      this.props.setCurrentScreen(currentScreen)
+      setCurrentScreen(currentScreen)
     }
   }
+
+  bindNavigator = navigatorRef =>
+    navigationService.setTopLevelNavigator(navigatorRef)
 
   render() {
     return (
@@ -43,23 +48,16 @@ class App extends Component<Props> {
         <RootNavigation
           onNavigationStateChange={this.handleNavigationStateChange}
           uriPrefix={config.deepLinkUriPrefix}
-          ref={navigatorRef =>
-            navigationService.setTopLevelNavigator(navigatorRef)
-          }
+          ref={this.bindNavigator}
         />
       </View>
     )
   }
 }
 
-const mapStateToProps = ({ user }: MainState) => ({ user })
-
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   setCurrentScreen: (screenName: string) =>
     dispatch(actions.misc.setCurrentScreen(screenName))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default connect(mapDispatchToProps)(App)

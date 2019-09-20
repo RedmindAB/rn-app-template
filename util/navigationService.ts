@@ -3,14 +3,14 @@ import {
   NavigationContainerComponent
 } from 'react-navigation'
 
-let _navigator: NavigationContainerComponent
+let navigatorInstance: NavigationContainerComponent
 
 function setTopLevelNavigator(navigatorRef: NavigationContainerComponent) {
-  _navigator = navigatorRef
+  navigatorInstance = navigatorRef
 }
 
 function navigate(routeName: string, params = {}) {
-  _navigator.dispatch(
+  navigatorInstance.dispatch(
     NavigationActions.navigate({
       routeName,
       params
@@ -19,11 +19,11 @@ function navigate(routeName: string, params = {}) {
 }
 
 function goBack() {
-  _navigator.dispatch(NavigationActions.back())
+  navigatorInstance.dispatch(NavigationActions.back())
 }
 
 function dispatch(opts) {
-  _navigator.dispatch(opts)
+  navigatorInstance.dispatch(opts)
 }
 
 export default {

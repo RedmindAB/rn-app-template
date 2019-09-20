@@ -1,6 +1,5 @@
 import { persistCombineReducers } from 'redux-persist'
 import { AsyncStorage } from 'react-native'
-
 import { MiscState, miscReducer } from './misc'
 
 const persistConfig = {
