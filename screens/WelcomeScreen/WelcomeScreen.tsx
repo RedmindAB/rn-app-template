@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CenteredFillView, Text } from 'styled-native-kit'
+import { CenteredFillView, Text, CircleView } from 'styled-native-kit'
 
 import i18n, { keys } from '../../i18n'
 
@@ -11,9 +11,11 @@ class WelcomeScreen extends Component<Props> {
   render() {
     return (
       <CenteredFillView>
-        <Text centered uppercase>
-          {i18n.t(keys.welcome)}!
-        </Text>
+        <CircleView size={240} color='purple'>
+          <Text centered uppercase fontSize={100}>
+            {i18n.t(keys.welcome)}!
+          </Text>
+        </CircleView>
       </CenteredFillView>
     )
   }
