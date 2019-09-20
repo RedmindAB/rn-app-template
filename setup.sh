@@ -50,6 +50,7 @@ rm -rf MOVE_TO_PARENT_DIR
 rm -rf components/common/REMOVE_ME.ts
 rm -rf assets/svg/REMOVE_ME.ts
 rm -rf ../.prettierrc.js
+rm -rf ../.eslintrc.js
 echo "${GREEN}✅ Setup config files!${CLEAR}"
 
 echo "${GREEN}🎉 SETUP COMPLETE! 🎉"
