@@ -35,6 +35,7 @@ echo "${GREEN}✅ Pastries installed!${CLEAR}"
 echo "${GREEN}Moving config files...${CLEAR}"
 cp -R -L MOVE_TO_PARENT_DIR/* ../
 rm -rf MOVE_TO_PARENT_DIR
+rm -rf components/common/REMOVE_ME.ts
 echo "${GREEN}✅ Moved config files!${CLEAR}"
 
 echo "${GREEN}🎉 SETUP COMPLETE! 🎉"
