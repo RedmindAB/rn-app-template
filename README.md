@@ -14,7 +14,7 @@
 Using React-Native >= 0.60 the following native libraries should be auto linked.
 Otherwise run `react-native link {LIBRARY_NAME}`
 
-`npm i styled-components styled-native-kit react-navigation i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain color react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-safari-view react-native-linear-gradient react-native-svg`
+`npm i styled-components styled-native-kit react-navigation i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain color react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-inapp-browser-reborn react-native-safari-view react-native-linear-gradient react-native-svg`
 
 ## Install dev dependencies
 

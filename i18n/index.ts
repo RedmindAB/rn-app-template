@@ -7,8 +7,8 @@ import moment from 'moment'
 
 import sv from './languages/sv.json'
 import en from './languages/en.json'
-import xxx from './languages/xxx.json'
-import long from './languages/long.json'
+import missingTranslationDetection from './languages/missingTranslationDetection.json'
+import breakingLongTextDetection from './languages/breakingLongTextDetection.json'
 import { store } from '../redux/store'
 
 export const keys = transformKeys(en)
@@ -31,9 +31,9 @@ i18n.translations = { en, sv }
 moment.locale(deviceLocale.toLowerCase() === 'sv' ? 'sv' : 'en')
 
 // used for looking for missing translations
-__DEV__ && (i18n.translations.xxx = xxx)
+__DEV__ && (i18n.translations.xxx = missingTranslationDetection)
 
 // used for checking breaking texts
-__DEV__ && (i18n.translations.long = long)
+__DEV__ && (i18n.translations.long = breakingLongTextDetection)
 
 export default i18n

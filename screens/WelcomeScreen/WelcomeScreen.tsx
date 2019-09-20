@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-
 import { CenteredFillView, Text } from 'styled-native-kit'
+
+import i18n, { keys } from '../../i18n'
 
 type OwnProps = {}
 
@@ -11,7 +12,7 @@ class WelcomeScreen extends Component<Props> {
     return (
       <CenteredFillView>
         <Text centered uppercase>
-          Welcome Redmind!
+          {i18n.t(keys.welcome)}!
         </Text>
       </CenteredFillView>
     )
