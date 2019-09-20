@@ -1,9 +1,3 @@
-/**
- *
- * This is required to support SVG
- *
- */
-
 const { getDefaultConfig } = require('metro-config')
 
 module.exports = (async () => {

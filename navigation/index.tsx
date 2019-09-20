@@ -1,11 +1,15 @@
 import React from 'react'
 import { fromRight } from 'react-navigation-transitions'
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
+import {
+  createAppContainer,
+  createBottomTabNavigator,
+  createStackNavigator
+} from 'react-navigation'
 
 import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen'
 import { screens, stacks } from './navigationConstants'
 
-const WelcomeStack = createStacknavigator(
+const WelcomeStack = createStackNavigator(
   {
     [screens.WELCOME]: WelcomeScreen
   },

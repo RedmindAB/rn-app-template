@@ -31,11 +31,12 @@ cd src && svn export https://github.com/RedmindAB/pastries/trunk/react-native pa
 echo "${GREEN}✅ Pastries installed!${CLEAR}"
 
 
-# Move folders to parent directory
-echo "${GREEN}Moving config files...${CLEAR}"
+# Setup config files
+echo "${GREEN}Setting up config files...${CLEAR}"
 cp -R -L MOVE_TO_PARENT_DIR/* ../
 rm -rf MOVE_TO_PARENT_DIR
 rm -rf components/common/REMOVE_ME.ts
-echo "${GREEN}✅ Moved config files!${CLEAR}"
+rm -rf ../.prettierrc.js
+echo "${GREEN}✅ Setup config files!${CLEAR}"
 
 echo "${GREEN}🎉 SETUP COMPLETE! 🎉"

@@ -13,7 +13,7 @@ class WelcomeScreen extends Component<Props> {
       <CenteredFillView>
         <CircleView size={240} color='purple'>
           <Text centered uppercase fontSize={100}>
-            {i18n.t(keys.welcome)}!
+            {i18n.t(keys.welcome)}
           </Text>
         </CircleView>
       </CenteredFillView>
