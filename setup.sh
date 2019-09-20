@@ -8,7 +8,7 @@ npm i styled-components styled-native-kit react-navigation i18n-js object-key-pa
 echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies
-npm i -D react-native-svg-transformer @types/styled-components @types/react-navigation @types/react-redux
+npm i -D react-native-svg-transformer @types/react @types/react-native @types/styled-components @types/react-navigation @types/react-redux
 echo "${GREEN}✅ Dev Dependencies installed!${CLEAR}"
 
 # Install pods
