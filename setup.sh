@@ -10,13 +10,15 @@ echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies
 echo "${GREEN}Installing dev dependencies...${CLEAR}"
-npm i -D react-native-svg-transformer @types/react @types/react-native @types/styled-components @types/react-navigation @types/react-redux eslint eslint-config-airbnb eslint-config-prettier typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-plugin-react-native
+npm i -D react-native-svg-transformer @types/react @types/react-native @types/styled-components @types/react-navigation typescript
+# Linter dependencies (WIP) - Conflicts with prettier auto formatting
+# npm i -D @types/react-redux eslint eslint-config-airbnb eslint-config-prettier @typescript-eslint/eslint-plugin eslint-plugin-react eslint-plugin-react-native
 echo "${GREEN}✅ Dev Dependencies installed!${CLEAR}"
 
-# Installing peer dependencies
-echo "${GREEN}Installing peer dependencies...${CLEAR}"
-npx install-peerdeps --dev eslint-config-airbnb
-echo "${GREEN}✅ Peer Dependencies installed!${CLEAR}"
+# Installing peer dependencies (see above WIP)
+# echo "${GREEN}Installing peer dependencies...${CLEAR}"
+# npx install-peerdeps --dev eslint-config-airbnb
+# echo "${GREEN}✅ Peer Dependencies installed!${CLEAR}"
 
 # Link native libraries
 echo "${GREEN}Linking native libraries...${CLEAR}"
@@ -47,10 +49,12 @@ mv ../eslintrc.json ../.eslintrc.json
 
 # Remove files
 rm -rf MOVE_TO_PARENT_DIR
-rm -rf components/common/REMOVE_ME.ts
 rm -rf assets/svg/REMOVE_ME.ts
 rm -rf ../.prettierrc.js
 rm -rf ../.eslintrc.js
+rm -rf README.md
+rm -rf setup.sh
+rm -rf package-lock.json
 echo "${GREEN}✅ Setup config files!${CLEAR}"
 
 echo "${GREEN}🎉 SETUP COMPLETE! 🎉"
