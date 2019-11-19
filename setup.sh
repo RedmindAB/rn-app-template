@@ -5,7 +5,7 @@ echo "${GREEN}⭐ Starting Setup ⭐${CLEAR}"
 
 # Install dependencies
 echo "${GREEN}Installing dependencies...${CLEAR}"
-npm i styled-components styled-native-kit react-navigation@3.12.1 i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain color react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons
+npm i styled-components styled-native-kit react-navigation react-navigation-drawer react-navigation-stack react-navigation-tabs i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain color react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons
 echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies

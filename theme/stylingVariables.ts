@@ -1,6 +1,6 @@
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
-import layout from '../constants/layout'
+import layout from './layout'
 import theme from '.'
 
 export const baseline = layout.isSmallDevice ? 8 : 8

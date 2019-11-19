@@ -1,6 +1,5 @@
 import vanillaAxios from 'axios'
-
-import env from '../constants/env'
+import env from '../config/env'
 
 const axios = vanillaAxios.create({
   baseURL: env.BASE_URL,

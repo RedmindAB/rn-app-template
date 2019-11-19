@@ -5,5 +5,6 @@ export default {
   faqUrl: '',
   contactUrl: '',
   termsUrl: '',
-  aboutUrl: ''
+  aboutUrl: '',
+  androidChannelId: 'notification-channel'
 }
