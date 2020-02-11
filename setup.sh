@@ -5,24 +5,16 @@ echo "${GREEN}⭐ Starting Setup ⭐${CLEAR}"
 
 # Install dependencies
 echo "${GREEN}Installing dependencies...${CLEAR}"
-npm i styled-components styled-native-kit react-navigation react-navigation-drawer react-navigation-stack react-navigation-tabs i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain color react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons
+npm i styled-components styled-native-kit react-navigation react-navigation-drawer react-navigation-stack react-navigation-tabs i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons @redmindab/react-hooks
 echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies
 echo "${GREEN}Installing dev dependencies...${CLEAR}"
-npm i -D react-native-svg-transformer @types/react @types/react-native @types/styled-components @types/react-navigation typescript
-# Linter dependencies (WIP) - Conflicts with prettier auto formatting
-# npm i -D @types/react-redux eslint eslint-config-airbnb eslint-config-prettier @typescript-eslint/eslint-plugin eslint-plugin-react eslint-plugin-react-native
+npm i -D react-native-svg-transformer @types/react @types/react-native @types/react-navigation typescript eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser @redmindab/eslint-config
 echo "${GREEN}✅ Dev Dependencies installed!${CLEAR}"
-
-# Installing peer dependencies (see above WIP)
-# echo "${GREEN}Installing peer dependencies...${CLEAR}"
-# npx install-peerdeps --dev eslint-config-airbnb
-# echo "${GREEN}✅ Peer Dependencies installed!${CLEAR}"
 
 # Link native libraries
 echo "${GREEN}Linking native libraries...${CLEAR}"
-react-native link react-native-gesture-handler
 react-native link react-native-vector-icons
 echo "${GREEN}✅ Native libraries linked!${CLEAR}"
 
