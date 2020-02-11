@@ -4,7 +4,7 @@ import constants from '../config/constants'
 import { store } from '../redux/store'
 import { APP_START } from '../redux/misc/types'
 import axios from '../api'
-import { setFcmToken } from './firebase'
+import { setFcmToken } from './firebase/firebase'
 
 export function clearNotificationBadges() {
   if (Platform.OS !== 'ios') return

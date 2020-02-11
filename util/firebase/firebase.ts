@@ -1,7 +1,7 @@
 import firebase, { RNFirebase } from 'react-native-firebase'
-import { store } from '../redux/store'
-import env from '../config/env'
-import constants from '../config/constants'
+import { store } from '../../redux/store'
+import env from '../../config/env'
+import constants from '../../config/constants'
 
 export async function sendPasswordlessEmailLoginLink(email: string) {
   return await firebase.auth().sendSignInLinkToEmail(email, {
@@ -14,6 +14,9 @@ export async function sendPasswordlessEmailLoginLink(email: string) {
   })
 }
 
+// Add firebase console.log helper class.
+
+// Needs firebase write rules to work.
 export async function setFcmToken() {
   try {
     const fcmToken = await firebase.messaging().getToken()

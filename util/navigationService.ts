@@ -5,7 +5,7 @@ import {
 
 let navigatorInstance: NavigationContainerComponent
 
-function setTopLevelNavigator(navigatorRef: NavigationContainerComponent) {
+function bindNavigator(navigatorRef: NavigationContainerComponent) {
   navigatorInstance = navigatorRef
 }
 
@@ -29,6 +29,6 @@ function dispatch(opts) {
 export default {
   navigate,
   goBack,
-  setTopLevelNavigator,
+  bindNavigator,
   dispatch
 }
