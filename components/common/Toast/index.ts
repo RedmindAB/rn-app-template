@@ -1,5 +1,5 @@
 import Toast from './Toast'
-import { showToast, ToastService } from './service'
+import { showToast, ToastService, clearToasts, setToastRef } from './service'
 
-export { showToast, ToastService }
+export { showToast, ToastService, clearToasts, setToastRef }
 export default Toast
