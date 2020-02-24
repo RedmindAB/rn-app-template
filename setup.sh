@@ -10,7 +10,7 @@ echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies
 echo "${GREEN}Installing dev dependencies...${CLEAR}"
-npm i -D react-native-svg-transformer @types/react @types/react-native typescript eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser @redmindab/eslint-config
+npm i -D react-native-svg-transformer @types/react @types/react-native typescript eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser @redmindab/eslint-config @types/styled-components@4.1.19
 echo "${GREEN}✅ Dev Dependencies installed!${CLEAR}"
 
 # Install pods
