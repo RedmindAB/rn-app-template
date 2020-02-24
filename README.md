@@ -10,6 +10,10 @@
 
 `src/setup.sh`
 
+## Xcode setup
+
+Open up xcode and go to `File > Workspace Settings` then set build system to `Legacy Build Build System`
+
 ## React-Navigation setup
 
 [Add the following two lines to dependencies section](https://reactnavigation.org/docs/en/getting-started.html) in `android/app/build.gradle`
