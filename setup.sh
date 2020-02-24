@@ -5,7 +5,7 @@ echo "${GREEN}⭐ Starting Setup ⭐${CLEAR}"
 
 # Install dependencies
 echo "${GREEN}Installing dependencies...${CLEAR}"
-npm i styled-components react-native-reanimated styled-native-kit @react-navigation/native react-native-screens react-native-safe-area-context  @react-navigation/stack @react-navigation/bottom-tabs @react-native-community/masked-view i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain react-native-gesture-handler react-native-iphone-x-helper validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons @redmindab/react-hooks
+npm i styled-components react-native-reanimated styled-native-kit @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/stack @react-navigation/bottom-tabs @react-native-community/masked-view i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain react-native-gesture-handler react-native-iphone-x-helper validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons @redmindab/react-hooks
 echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies
@@ -23,7 +23,6 @@ echo "${GREEN}Installing pastries...${CLEAR}"
 npm i -g pastry-cli
 cd src && svn export https://github.com/RedmindAB/pastries/trunk/react-native pastries
 echo "${GREEN}✅ Pastries installed!${CLEAR}"
-
 
 # Setup config files
 echo "${GREEN}Setting up config files...${CLEAR}"

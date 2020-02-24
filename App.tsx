@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Toast, { setToastRef } from './components/common/Toast'
 import WelcomeScreen from './screens/WelcomeScreen'
+import { navigationRef } from './util/navigationService'
 
 type OwnProps = {}
 type Props = OwnProps
@@ -13,7 +14,7 @@ const Tab = createBottomTabNavigator()
 const App: FunctionComponent<Props> = () => {
   return (
     <View style={{ flex: 1, position: 'relative' }}>
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <Tab.Navigator>
           <Tab.Screen name="Home" component={WelcomeScreen} />
         </Tab.Navigator>

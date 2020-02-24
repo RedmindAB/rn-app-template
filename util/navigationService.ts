@@ -1,34 +1,21 @@
-import {
-  NavigationActions,
-  NavigationContainerComponent
-} from 'react-navigation'
+import React from 'react'
+import { NavigationContainerRef } from '@react-navigation/native'
 
-let navigatorInstance: NavigationContainerComponent
-
-function bindNavigator(navigatorRef: NavigationContainerComponent) {
-  navigatorInstance = navigatorRef
-}
+const navigationRef = React.createRef<NavigationContainerRef>()
 
 function navigate(routeName: string, params = {}) {
-  navigatorInstance.dispatch(
-    NavigationActions.navigate({
-      routeName,
-      params
-    })
-  )
+  if (!navigationRef.current) return
+  navigationRef.current.navigate(routeName, params)
 }
 
 function goBack() {
-  navigatorInstance.dispatch(NavigationActions.back())
+  if (!navigationRef.current) return
+  navigationRef.current.goBack()
 }
 
 function dispatch(opts) {
-  navigatorInstance.dispatch(opts)
+  if (!navigationRef.current) return
+  navigationRef.current.dispatch(opts)
 }
 
-export default {
-  navigate,
-  goBack,
-  bindNavigator,
-  dispatch
-}
+export { navigate, goBack, navigationRef, dispatch }
