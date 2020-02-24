@@ -8,25 +8,19 @@ import sv from './languages/sv.json'
 import en from './languages/en.json'
 import missingTranslationDetection from './languages/missingTranslationDetection.json'
 import breakingLongTextDetection from './languages/breakingLongTextDetection.json'
-import { store } from '../redux/store'
 
 export const tk = transformKeys(en)
 
 const getIOSDeviceLocale = () =>
   oc(NativeModules)
     .SettingsManager.settings.AppleLocale('')
-    .substr(0, 2) || NativeModules.SettingsManager.settings.AppleLanguages[0]
+    .substr(0, 2) ||
+  oc(NativeModules).SettingsManager.settings.AppleLanguages(['en'])[0]
 
 const getAndroidDeviceLocale = () => NativeModules.I18nManager.localeIdentifier
 
 const deviceLocale =
   Platform.OS === 'ios' ? getIOSDeviceLocale() : getAndroidDeviceLocale()
-
-
-export const setInitialLocale = () => {
-  const locale = store.getState().settings.locale
-  i18n.locale = locale || deviceLocale
-}
 
 i18n.defaultLocale = 'en'
 i18n.locale = deviceLocale
@@ -35,10 +29,13 @@ i18n.translations = { en, sv }
 
 moment.locale(deviceLocale.toLowerCase() === 'sv' ? 'sv' : 'en')
 
-// used for looking for missing translations
-__DEV__ && (i18n.translations.missingTranslationDetection = missingTranslationDetection)
-
-// used for checking breaking texts
-__DEV__ && (i18n.translations.breakingLongTextDetection = breakingLongTextDetection)
+if (__DEV__) {
+  // used for looking for missing translations
+  i18n.translations.missingTranslationDetection = missingTranslationDetection
+  // used for checking breaking texts
+  i18n.translations.breakingLongTextDetection = breakingLongTextDetection
+}
 
 export default i18n
+
+console.log(process.env)
