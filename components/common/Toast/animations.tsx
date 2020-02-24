@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useRef, useEffect } from 'react'
 import { Animated } from 'react-native'
-import theme from '../../theme'
+import theme from '../../../theme'
 
 type OwnProps = {
   duration?: number

@@ -5,12 +5,12 @@ echo "${GREEN}⭐ Starting Setup ⭐${CLEAR}"
 
 # Install dependencies
 echo "${GREEN}Installing dependencies...${CLEAR}"
-npm i styled-components styled-native-kit react-navigation react-navigation-drawer react-navigation-stack react-navigation-tabs i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain react-native-gesture-handler react-native-iphone-x-helper react-navigation-transitions validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons @redmindab/react-hooks
+npm i styled-components react-native-reanimated styled-native-kit @react-navigation/native react-native-screens react-native-safe-area-context  @react-navigation/stack @react-navigation/bottom-tabs @react-native-community/masked-view i18n-js object-key-path-transformer moment axios redux redux-saga react-redux redux-saga-requests redux-saga-requests-axios redux-persist reselect ts-optchain react-native-gesture-handler react-native-iphone-x-helper validator react-native-inappbrowser-reborn react-native-safari-view react-native-linear-gradient react-native-svg react-native-vector-icons @redmindab/react-hooks
 echo "${GREEN}✅ Dependencies installed!${CLEAR}"
 
 # Install dev dependencies
 echo "${GREEN}Installing dev dependencies...${CLEAR}"
-npm i -D react-native-svg-transformer @types/react @types/react-native @types/react-navigation typescript eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser @redmindab/eslint-config
+npm i -D react-native-svg-transformer @types/react @types/react-native typescript eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser @redmindab/eslint-config
 echo "${GREEN}✅ Dev Dependencies installed!${CLEAR}"
 
 # Link native libraries

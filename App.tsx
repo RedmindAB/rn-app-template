@@ -1,22 +1,23 @@
 import React, { FunctionComponent } from 'react'
 import { View } from 'react-native'
-import navigationService from './util/navigationService'
-import RootNavigation from './navigation'
-import constants from './config/constants'
-import { handleNavigationStateChange } from './util/helpers'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Toast, { setToastRef } from './components/common/Toast'
+import WelcomeScreen from './screens/WelcomeScreen'
 
 type OwnProps = {}
 type Props = OwnProps
 
+const Tab = createBottomTabNavigator()
+
 const App: FunctionComponent<Props> = () => {
   return (
     <View style={{ flex: 1, position: 'relative' }}>
-      <RootNavigation
-        onNavigationStateChange={handleNavigationStateChange}
-        uriPrefix={constants.deepLinkUriPrefix}
-        ref={navigationService.bindNavigator}
-      />
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={WelcomeScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
       <Toast
         ref={setToastRef}
         // TODO: implement preconfigured positioning for the content container
