@@ -3,17 +3,22 @@ import { persistStore } from 'redux-persist'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './reducers'
 import rootSaga from './sagas'
+import Reactotron from '../ReactotronConfig'
 
-const sagaMiddleware = createSagaMiddleware()
+const sagaMonitor = Reactotron.createSagaMonitor()
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
 
+let middleware
 
-// @ts-ignore
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
-export const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(sagaMiddleware))
-)
+if (process.env.JEST_WORKER_ID) {
+  middleware = compose(applyMiddleware(sagaMiddleware))
+} else {
+  middleware = compose(
+    applyMiddleware(sagaMiddleware),
+    Reactotron.createEnhancer()
+  )
+}
+export const store = createStore(rootReducer, middleware)
 export const persistor = persistStore(store)
 
 sagaMiddleware.run(rootSaga)
