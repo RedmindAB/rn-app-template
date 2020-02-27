@@ -21,7 +21,7 @@
     "moment": "^2.24.0",
     "object-key-path-transformer": "^1.0.3",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.61.0",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-inappbrowser-reborn": "^3.3.4",
     "react-native-iphone-x-helper": "^1.2.1",
