@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ToastUI from './ToastUI/ToastUI'
 import { View, StyleProp, ViewStyle, TextStyle, ImageStyle } from 'react-native'
+import ToastUI from './ToastUI/ToastUI'
 import { DEFAULT_DURATION } from './animations'
 
 type OwnProps = {
@@ -14,6 +14,7 @@ type Props = OwnProps
 
 type ShowToastOptions = {
   duration?: number
+  sticky?: boolean
 }
 
 export type ToastOptions = {
@@ -53,10 +54,19 @@ export class Toast extends Component<Props> {
       ]
     })
 
-    setTimeout(
+    if (toastOptions.sticky) {
+      return () => this.animateOutToast(id)
+    }
+
+    const timeout = setTimeout(
       () => this.animateOutToast(id),
       duration || Toast.DEFAULT_DURATION
     )
+
+    return () => {
+      clearTimeout(timeout)
+      this.animateOutToast(id)
+    }
   }
 
   public clearToasts = () => this.setState({ touastQueue: [] })

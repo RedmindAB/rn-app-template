@@ -1,12 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { FlexRow, View } from 'styled-native-kit'
-import {
-  ToastCard,
-  ToastTitle,
-  ToastMessage,
-  ToastTextContainer,
-  ToastImage
-} from './styled'
+import { useLayout } from '@redmindab/react-hooks'
 import {
   Image,
   StyleProp,
@@ -14,9 +8,15 @@ import {
   TextStyle,
   ImageStyle
 } from 'react-native'
+import {
+  ToastCard,
+  ToastTitle,
+  ToastMessage,
+  ToastTextContainer,
+  ToastImage
+} from './styled'
 import { ToastQueueItem } from '../Toast'
 import { SlideDownFadeIn, Shrink } from '../animations'
-import { useLayout } from '@redmindab/react-hooks'
 
 type OwnProps = {
   animated?: boolean
@@ -40,16 +40,16 @@ export const ToastUI: FunctionComponent<Props> = ({
   toastMessageStyle,
   toastTitleStyle
 }) => {
-  const AnimationWrapper = animated
-    ? animateOut
-      ? Shrink
-      : SlideDownFadeIn
-    : View
-
   const [layout, bindLayout] = useLayout()
 
+  let ToastWrapper = View
+
+  if (animated) {
+    ToastWrapper = animateOut ? Shrink : SlideDownFadeIn
+  }
+
   return (
-    <AnimationWrapper height={layout.height}>
+    <ToastWrapper height={layout.height}>
       <ToastCard
         style={toastContainerStyle}
         activeOpacity={onPress ? 0.7 : 1}
@@ -70,7 +70,7 @@ export const ToastUI: FunctionComponent<Props> = ({
           </ToastTextContainer>
         </FlexRow>
       </ToastCard>
-    </AnimationWrapper>
+    </ToastWrapper>
   )
 }
 
