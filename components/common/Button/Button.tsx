@@ -54,6 +54,7 @@ class Button extends Component<Props> {
       noFillIcon: noFill,
       ...touchableProps
     } = this.props
+
     return (
       <TouchableOpacity
         disabled={disabled || loading}
@@ -73,13 +74,13 @@ class Button extends Component<Props> {
           tertiary={tertiary}
           {...containerProps}
         >
-          {loading && (
-            <ActivityIndicator
-              style={{ marginRight: theme.baseline }}
-              color="white"
-            />
-          )}
           <FlexRow>
+            {loading && (
+              <ActivityIndicator
+                style={{ marginRight: theme.baseline }}
+                color="white"
+              />
+            )}
             {Icon && (
               <Icon
                 fill={noFill ? 'transparent' : 'white'}

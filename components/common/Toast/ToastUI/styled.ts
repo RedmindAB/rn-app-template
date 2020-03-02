@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components/native'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity, Text, SafeAreaView } from 'react-native'
 import { CircleView } from 'styled-native-kit'
-import { SafeAreaView, Header } from 'react-navigation'
 import theme from '../../../theme'
+import layout from '../../../../theme/layout'
 
 export const cardShadow = css`
   shadow-color: #948aa5;
@@ -14,7 +14,7 @@ export const cardShadow = css`
 
 export const ToastWrapper = styled(SafeAreaView)`
   position: absolute;
-  top: ${Header.HEIGHT * 1.5};
+  top: ${layout.height * 0.15};
   left: 0;
   right: 0;
 `
